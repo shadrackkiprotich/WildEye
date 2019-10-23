@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\joshc\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\joshc\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.3\\**",
+                "C:\\Users\\joshc\\Documents\\Arduino\\libraries\\**",
+                "C:\\Program Files (x86)\\Arduino\\tools\\**",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "${workspaceFolder}/**",
+                "C:\\Users\\joshc\\Documents\\Arduino\\libraries\\adidax-dht11-b7fbbcd\\**",
+                "C:\\Users\\joshc\\Documents\\Arduino\\libraries\\Arduino_SigFox_for_MKRFox1200\\src",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\SoftwareSerial\\src\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USBCON"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "forcedInclude": [
+                "C:\\Users\\joshc\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.3\\cores\\arduino\\Arduino.h"
+            ],
+            "browse": {
+                "path": [
+                    "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\**",
+                    "C:\\\\Users\\\\joshc\\\\AppData\\\\Local\\\\Arduino15\\\\packages\\\\arduino\\\\tools\\\\**",
+                    "C:\\\\Users\\\\joshc\\\\AppData\\\\Local\\\\Arduino15\\\\packages\\\\arduino\\\\hardware\\\\samd\\\\1.8.3\\\\**",
+                    "C:\\\\Users\\\\joshc\\\\Documents\\\\Arduino\\\\libraries\\\\**",
+                    "C:\\\\Program Files (x86)\\\\Arduino\\\\tools\\\\**",
+                    "C:\\\\Program Files (x86)\\\\Arduino\\\\hardware\\\\arduino\\\\avr\\\\**",
+                    "${workspaceFolder}/**",
+                    "C:\\\\Users\\\\joshc\\\\Documents\\\\Arduino\\\\libraries\\\\adidax-dht11-b7fbbcd\\\\**",
+                    "C:\\\\Users\\\\joshc\\\\Documents\\\\Arduino\\\\libraries\\\\Arduino_SigFox_for_MKRFox1200\\\\src",
+                    "C:\\\\Program Files (x86)\\\\Arduino\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\SoftwareSerial\\\\src\\\\**"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
