@@ -2,6 +2,7 @@ import serial
 port = "/dev/ttyACM0"#put your port here
 baudrate = 9600
 ser = serial.Serial(port, baudrate)
+
 def tell(msg):
     msg = msg + '\n'
     x = msg.encode('ascii') # encode n send
@@ -13,7 +14,8 @@ def hear():
     return mystring
 
 while True:
-    val = input() # take user input
-    tell(val) # send it to arduino
-    var = hear() # listen to arduino
-    print(var) #print what arduino sent
+    def Motion_detected():
+        val = input() # take user input
+        tell(val) # send it to arduino
+        var = hear() # listen to arduino
+        print(var) #print what arduino sent
