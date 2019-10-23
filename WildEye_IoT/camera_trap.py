@@ -3,11 +3,18 @@ from picamera import PiCamera
 from time import sleep
 import serial
 
+import keras
+from keras.models import load_model
+from keras.preprocessing import image
+from keras.applications.vgg16 import decode_predictions
+import numpy as np
+
 port = "/dev/ttyACM0"#put your port here
 baudrate = 9600
 ser = serial.Serial(port, baudrate)
 pir = MotionSensor(4)
 val = "llama" # take user input
+img_path = ""
 
 def tell(msg):
     msg = msg + '\n'
@@ -22,18 +29,30 @@ def hear():
 def trap():
     camera = PiCamera()
     camera.start_preview()
-    for i in range(5):
-        sleep(1)
-        camera.capture('/home/pi/smart_cam/image%s.jpg' % i)
-        camera.stop_preview()
+    img_path="/home/pi/smart_cam/image.jpg"
+    camera.capture(img_path)
+    camera.stop_preview()
+    analyse_image()
+    send_to_sigfox()
+
+def analyse_image():
+    model=load_model("WildEye_AI/Model/wild_eye_v1'h5")
+    img=image.load_img(img_path,target_size=(224,224))
+    x = image.img_to_array(img)
+    x=np.expand_dims(x,axis=0)
+
+    features = model.predict(x)
+    print(decode_predictions(features, top=1))
+    val = features[0]
+
+def send_to_sigfox():
+        tell(val) # send it to arduino
+        var = hear() # listen to arduino
+        print(var) #print what arduino sent
 
 while True:
     pir.wait_for_motion()
     print("Motion detected")
-    trap()
-    tell(val) # send it to arduino
-    var = hear() # listen to arduino
-    print(var) #print what arduino sent
-     
+    trap()     
     pir.wait_for_no_motion()
     print("Motion stopped")
